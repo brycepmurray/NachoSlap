@@ -5,28 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/main.css">
     <link rel="icon" href="https://img00.deviantart.net/28d6/i/2013/182/2/6/nacho_libre_by_joelsondesouza-d6bl9nn.jpg">
     <title>Nacho Slap</title>
 </head>
 
 <body>
-    <header>
-        <div class="row labels" id="specs">
-            <div class="col-sm-2" id="NachoSpecs">
-                <p>Health: <span id="Nacho.health">Health</span></p>
-                <p>Hits: <span id="Nacho.hits">Hits</span></p>
-                <div class="nacho">
-                    <img class="nacho" src="https://i.pinimg.com/originals/a1/a5/f4/a1a5f43315f458ab3c5e439aee5ac9de.png" alt="Nacho Libre">
-                </div>
+    <header class="labels">
+        <!-- <div class="row labels"> -->
+        <div class="col-sm-2" id="NachoSpecs">
+            <p>Health: <span id="Nacho.health">${nacho.health}</span></p>
+            <p>Hits: <span id="Nacho.hits">Hits</span></p>
+        </div>
+        <img class="banner" src="assets/images/nacho-banner.png" alt="Nacho Libre Banner">
+        <div class="col-sm-2" id="RamseSpecs">
+            <p>Health: <span id="Ramses.health">Health</span></p>
+            <p>Hits: <span id="Ramses.hits">Hits</span></p>
+        </div>
+        <!-- </div> -->
+    </header>
+    <div class="row images">
+        <div class="col-sm-5 nacho-column">
+            <img class="nacho" src="https://i.pinimg.com/originals/a1/a5/f4/a1a5f43315f458ab3c5e439aee5ac9de.png" alt="Nacho Libre">
+        </div>
+        <div class="col-sm-2 attacks">
+            <button class="btn btn-primary re-adjust">Slap</button>
+            <button class="btn btn-warning re-adjust">El Cangrejo Submission</button>
+            <button class="btn btn-danger re-adjust">Anaconda Squeeze</button>
+        </div>
+        <div class="col-sm-5 ramse-column">
+            <img class="ramse" src="assets/images/ramses2.png/" alt="Ramses">
+        </div>
+    </div>
+    <footer>
+        <div class="row abilities">
+            <div class="col-sm-5 nl-powers">
+                <button></button>
+                <button></button>
+                <button></button>
             </div>
-            <div class="col-sm-2" id="RamseSpecs">
-                <p>Health: <span id="Nacho.health">Health</span></p>
-                <p>Hits: <span id="Nacho.hits">Hits</span></p>
+            <div class="col-sm-5 rm-powers">
+                <button></button>
+                <button></button>
+                <button></button>
             </div>
         </div>
-    </header>
+    </footer>
 
     <script>
     </script>
