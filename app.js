@@ -18,25 +18,23 @@ var Item = function(name, mod, description) {
 var nacho = new Player(100, [slap, elCangrejoSubmission, anacondaSqueeze], 0);
 
 var eaglePowers = new Item("Eagle Powers", 2, "Nacho Summons His Eagle Powers!")
-var stretchyPants = new Item("Stretchy Pants", 2, "Nacho Wears His Stretchy Pants!")
+var stretchyPants = new Item("Stretchy Pants", .5, "Nacho Wears His Stretchy Pants!")
 var corn = new Item("Delicious Corn", 15, "Nacho Enjoys His Deliciuos Corn!")
 
 // Nacho.items.push(eaglePowers, stretchyPants, corn)
 
-console.log(nacho)
-
 var ramses = new Player(100, [slap, elCangrejoSubmission, anacondaSqueeze], 0);
 
-var fancyOils = new Item("Facy Oils", 2, "Ramses Uses The Fancy Oils To Be Slick!")
-var championsBelt = new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that Ramses is Number Juan")
-var chair = new Item("The Chair", 2, "Ramses is Handed The Chair From Under The Stage")
+var chair = new Item("The Chair", 2, "Ramses is Handed The Chair From Under The Stage!")
+var fancyOils = new Item("Facy Oils", .5, "Ramses Uses The Fancy Oils To Be Slick!")
+var championsBelt = new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that He is Number Juan!")
 
 // Ramses.items.push(chair, championsBelt, fancyOils)
 
 var attacks = [slap, elCangrejoSubmission, anacondaSqueeze];
 
 function slap(ramses) {
-    ramses.health -= 1;
+    ramses.health -= 1 * this.addPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -45,7 +43,7 @@ function slap(ramses) {
 }
 
 function elCangrejoSubmission(ramses) {
-    ramses.health -= 5;
+    ramses.health -= 5 * this.addPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -54,7 +52,7 @@ function elCangrejoSubmission(ramses) {
 }
 
 function anacondaSqueeze(ramses) {
-    ramses.health -= 10;
+    ramses.health -= 10 * this.addPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -62,11 +60,19 @@ function anacondaSqueeze(ramses) {
     update()
 }
 
-function itemPowers() {
+function eaglePowers() {
+    nacho.items.push(eaglePowers)
+}
+
+function stretchyPants() {
+    nacho.items.push(stretchyPants)
+}
+
+function addPowers() {
     var total = 1
     for (let i = 0; i < nacho.items.length; i++) {
-        const item = nacho.items[i];
-        total += item.mod
+        const item = nacho.items[i].mod;
+        total = item * total
     }
     return total
 }
