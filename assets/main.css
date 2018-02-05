@@ -2,6 +2,7 @@ body {
   background-image: url("images/wrestling-ring.jpg");
   background-size: cover;
   background-position: center;
+  height: 100vh;
 }
 
 header {
@@ -15,7 +16,7 @@ header {
 }
 
 .ramse {
-  height: 44rem;
+  height: 38rem;
   width: auto;
   margin-top: -2rem;
   padding-left: 9rem;
@@ -23,7 +24,7 @@ header {
 }
 
 .nacho {
-  height: 44rem;
+  height: 38rem;
   width: auto;
 }
 
@@ -67,7 +68,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 70vh;
+  height: 50vh;
   padding-top: 5rem;
 }
 
@@ -91,4 +92,9 @@ header {
 .nl-powers {
   display: flex;
   justify-content: space-around;
+}
+
+.eagle {
+  height: 60px;
+  width: 60px;
 }
