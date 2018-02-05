@@ -15,13 +15,13 @@
     <header class="labels">
         <!-- <div class="row labels"> -->
         <div class="col-sm-2" id="NachoSpecs">
-            <p>Health: <span id="Nacho.health">${nacho.health}</span></p>
-            <p>Hits: <span id="Nacho.hits">Hits</span></p>
+            <p>Health: <span id="nacho.health">Health</span></p>
+            <p>Hits: <span id="nacho.hits">Hits</span></p>
         </div>
         <img class="banner" src="assets/images/nacho-banner.png" alt="Nacho Libre Banner">
         <div class="col-sm-2" id="RamseSpecs">
-            <p>Health: <span id="Ramses.health">Health</span></p>
-            <p>Hits: <span id="Ramses.hits">Hits</span></p>
+            <p>Health: <span id="ramses.health">Health</span></p>
+            <p>Hits: <span id="ramses.hits">Hits</span></p>
         </div>
         <!-- </div> -->
     </header>
@@ -30,9 +30,9 @@
             <img class="nacho" src="https://i.pinimg.com/originals/a1/a5/f4/a1a5f43315f458ab3c5e439aee5ac9de.png" alt="Nacho Libre">
         </div>
         <div class="col-sm-2 attacks">
-            <button class="btn btn-primary re-adjust">Slap</button>
-            <button class="btn btn-warning re-adjust">El Cangrejo Submission</button>
-            <button class="btn btn-danger re-adjust">Anaconda Squeeze</button>
+            <button class="btn btn-primary re-adjust" onclick="slap(ramses)">Slap</button>
+            <button class="btn btn-warning re-adjust" onclick="elCangrejoSubmission(ramses)">El Cangrejo Submission</button>
+            <button class="btn btn-danger re-adjust" onclick="anacondaSqueeze(ramses)">Anaconda Squeeze</button>
         </div>
         <div class="col-sm-5 ramse-column">
             <img class="ramse" src="assets/images/ramses2.png/" alt="Ramses">
@@ -41,20 +41,19 @@
     <footer>
         <div class="row abilities">
             <div class="col-sm-5 nl-powers">
-                <button></button>
-                <button></button>
-                <button></button>
+                <button class="btn btn-default" onclick="nacho.attack*2"><img src="https://placehold.it/60x60" alt=""></button>
+                <button class="btn btn-default" onclick="ramses.attack = 0"><img src="https://placehold.it/60x60" alt=""></button>
+                <button class="btn btn-default" onclick="nacho.health += 15"><img src="https://placehold.it/60x60" alt=""></button>
             </div>
             <div class="col-sm-5 rm-powers">
-                <button></button>
-                <button></button>
-                <button></button>
+                <button class="btn btn-default" onclick="ramses.attack*2"><img src="https://placehold.it/60x60" alt=""></button>
+                <button class="btn btn-default" onclick="nacho.attack = 0"><img src="https://placehold.it/60x60" alt=""></button>
+                <button class="btn btn-default" onclick="ramses.health += 15"><img src="https://placehold.it/60x60" alt=""></button>
             </div>
         </div>
     </footer>
 
-    <script>
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
