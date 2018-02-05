@@ -1,7 +1,3 @@
-function gameManager(slap, elCangrejoSubmission, anacondaSqueeze) {
-
-}
-
 var Player = function(health, attacks, hits) {
     this.health = health;
     this.items = [];
