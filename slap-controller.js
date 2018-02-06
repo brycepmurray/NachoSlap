@@ -4,7 +4,7 @@ function SlapController() {
     var slapService = new slapService()
 
     function draw() {
-        var helathElem = document.getElementById('health')
+        var healthElem = document.getElementById('health')
         healthElem.innerHTML = slapService.getHealth()
     }
 
