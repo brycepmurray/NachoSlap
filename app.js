@@ -17,9 +17,9 @@ var ramses = new Player(100, [slap, elCangrejoSubmission, anacondaSqueeze], 0);
 
 var items = {
     eaglePowers: new Item("Eagle Powers", 2, "Nacho Summons His Eagle Powers!"),
-    stretchyPants: new Item("Stretchy Pants", .5, "Nacho Wears His Stretchy Pants!"),
+    stretchyPants: new Item("Stretchy Pants", 1, "Nacho Wears His Stretchy Pants!"),
     corn: new Item("Delicious Corn", 15, "Nacho Enjoys His Deliciuos Corn!"),
-    chair: new Item("The Chair", 2, "Ramses is Handed The Chair From Under The Stage!"),
+    chair: new Item("The Chair", 1, "Ramses is Handed The Chair From Under The Stage!"),
     fancyOils: new Item("Facy Oils", .5, "Ramses Uses The Fancy Oils To Be Slick!"),
     championsBelt: new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that He is Number Juan!")
 }
@@ -30,7 +30,7 @@ var items = {
 var attacks = [slap, elCangrejoSubmission, anacondaSqueeze];
 
 function slap(ramses) {
-    ramses.health -= 1 * this.addPowers();
+    ramses.health -= 1 * this.addPowers() * this.addRamsesPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -39,7 +39,7 @@ function slap(ramses) {
 }
 
 function elCangrejoSubmission(ramses) {
-    ramses.health -= 5 * this.addPowers();
+    ramses.health -= 5 * this.addPowers() * this.addRamsesPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -48,7 +48,7 @@ function elCangrejoSubmission(ramses) {
 }
 
 function anacondaSqueeze(ramses) {
-    ramses.health -= 10 * this.addPowers();
+    ramses.health -= 10 * this.addPowers() * this.addRamsesPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
         ramses.health = 0
@@ -68,15 +68,25 @@ function chair(ramses) {
     ramses.items.push(items.chair)
 }
 
-function fancyOils(ramses) {
+function fancyOils(player) {
     ramses.items.push(items.fancyOils)
 }
 
 function addPowers(player) {
-    var modTotal = 1
+    let modTotal = 1
     for (let i = 0; i < nacho.items.length; i++) {
         debugger
-        var total = nacho.items[i].mod;
+        const total = nacho.items[i].mod;
+        modTotal = modTotal * total
+    }
+    return modTotal
+}
+
+function addRamsesPowers(player) {
+    let modTotal = 1
+    for (let i = 0; i < ramses.items.length; i++) {
+        debugger
+        const total = ramses.items[i].mod;
         modTotal = modTotal * total
     }
     return modTotal
