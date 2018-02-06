@@ -3,6 +3,7 @@ function SlapService() {
     function Player(name, health, slap, punch, kick) {
         this.name = name
         this.health = health
+        this.maxHealth = health
         this.attacks = {
             slap: slap,
             punch: punch,
@@ -32,19 +33,10 @@ function SlapService() {
         championsBelt: new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that He is Number Juan!")
     };
 
-    function addPowers(players) {
+    function addPowers(name) {
         let modTotal = 1
-        for (let i = 0; i < players[nacho].items.length; i++) {
-            const total = players[nacho].items[i].mod;
-            modTotal = modTotal * total
-        }
-        return modTotal
-    };
-
-    function addRamsesPowers(player) {
-        let modTotal = 1
-        for (let i = 0; i < players[ramses].items.length; i++) {
-            const total = players[ramses].items[i].mod;
+        for (let i = 0; i < players[name].items.length; i++) {
+            const total = players[name].items[i].mod;
             modTotal = modTotal * total
         }
         return modTotal
@@ -52,17 +44,17 @@ function SlapService() {
 
     //public
 
-    this.attack = function attack(player, attackType) {
-        player.health -= player.attacks[attackType] * addPowers()
+    this.attack = function attack(name, attackType) {
+        players[name].health -= players[name].attacks[attackType] * addPowers()
     }
 
-    this.giveItem = function giveItem(player, itemType) {
-        player.items.push(items[itemType])
+    this.giveItem = function giveItem(name, itemType) {
+        players[name].items.push(items[itemType])
     }
 
-    this.reset = function reset() {
-        players[health] = 100
-        players[hits] = 0
+    this.reset = function reset(players) {
+        players[name].health = players[name].maxHealth
+        players[name].hits = 0
     }
 
     this.getHealth = function getHealth(players) {

@@ -29,7 +29,7 @@ var items = {
 
 var attacks = [slap, elCangrejoSubmission, anacondaSqueeze];
 
-function slap(ramses) {
+function slap() {
     ramses.health -= 1 * this.addPowers() * this.addRamsesPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
@@ -38,7 +38,7 @@ function slap(ramses) {
     update()
 }
 
-function elCangrejoSubmission(ramses) {
+function elCangrejoSubmission() {
     ramses.health -= 5 * this.addPowers() * this.addRamsesPowers();
     ramses.hits += 1
     if (ramses.health < 0) {
@@ -56,19 +56,19 @@ function anacondaSqueeze(ramses) {
     update()
 }
 
-function eaglePowers(player) {
+function eaglePowers() {
     nacho.items.push(items.eaglePowers)
 }
 
-function stretchyPants(player) {
+function stretchyPants() {
     nacho.items.push(items.stretchyPants)
 }
 
-function chair(ramses) {
+function chair() {
     ramses.items.push(items.chair)
 }
 
-function fancyOils(player) {
+function fancyOils() {
     ramses.items.push(items.fancyOils)
 }
 
