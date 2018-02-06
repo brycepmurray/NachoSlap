@@ -11,6 +11,7 @@ function SlapService() {
         this.hits = 0
         this.items = []
     }
+
     var players = {
         nacho: new Player("Nacho", 100, 1, 5, 10),
         ramses: new Player("Ramses", 100, 1, 5, 10)
