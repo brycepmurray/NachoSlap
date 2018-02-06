@@ -13,19 +13,19 @@ var Item = function(name, mod, description) {
 
 var nacho = new Player(100, [slap, elCangrejoSubmission, anacondaSqueeze], 0);
 
-var eaglePowers = new Item("Eagle Powers", 2, "Nacho Summons His Eagle Powers!")
-var stretchyPants = new Item("Stretchy Pants", .5, "Nacho Wears His Stretchy Pants!")
-var corn = new Item("Delicious Corn", 15, "Nacho Enjoys His Deliciuos Corn!")
-
-// Nacho.items.push(eaglePowers, stretchyPants, corn)
-
 var ramses = new Player(100, [slap, elCangrejoSubmission, anacondaSqueeze], 0);
 
-var chair = new Item("The Chair", 2, "Ramses is Handed The Chair From Under The Stage!")
-var fancyOils = new Item("Facy Oils", .5, "Ramses Uses The Fancy Oils To Be Slick!")
-var championsBelt = new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that He is Number Juan!")
+var items = {
+    eaglePowers: new Item("Eagle Powers", 2, "Nacho Summons His Eagle Powers!"),
+    stretchyPants: new Item("Stretchy Pants", .5, "Nacho Wears His Stretchy Pants!"),
+    corn: new Item("Delicious Corn", 15, "Nacho Enjoys His Deliciuos Corn!"),
+    chair: new Item("The Chair", 2, "Ramses is Handed The Chair From Under The Stage!"),
+    fancyOils: new Item("Facy Oils", .5, "Ramses Uses The Fancy Oils To Be Slick!"),
+    championsBelt: new Item("Champions Belt", 15, "Ramses Feels Revitalized Remembering that He is Number Juan!")
+}
 
-// Ramses.items.push(chair, championsBelt, fancyOils)
+// nacho.items.push(eaglePowers, stretchyPants, corn)
+// ramses.items.push(chair, championsBelt, fancyOils)
 
 var attacks = [slap, elCangrejoSubmission, anacondaSqueeze];
 
@@ -56,21 +56,30 @@ function anacondaSqueeze(ramses) {
     update()
 }
 
-function eaglePowers() {
-    nacho.items.push(eaglePowers)
+function eaglePowers(player) {
+    nacho.items.push(items.eaglePowers)
 }
 
-function stretchyPants() {
-    nacho.items.push(stretchyPants)
+function stretchyPants(player) {
+    nacho.items.push(items.stretchyPants)
 }
 
-function addPowers() {
-    var total = 1
+function chair(ramses) {
+    ramses.items.push(items.chair)
+}
+
+function fancyOils(ramses) {
+    ramses.items.push(items.fancyOils)
+}
+
+function addPowers(nacho) {
+    var nachoTotal = 0
     for (let i = 0; i < nacho.items.length; i++) {
+        debugger
         const item = nacho.items[i].mod;
-        total = item * total
+        nachoTotal = item * nachoTotal
     }
-    return total
+    return nachoTotal
 }
 
 // function ramsesChoices(min, max) {
