@@ -75,7 +75,6 @@ function fancyOils(player) {
 function addPowers(player) {
     let modTotal = 1
     for (let i = 0; i < nacho.items.length; i++) {
-        debugger
         const total = nacho.items[i].mod;
         modTotal = modTotal * total
     }
@@ -85,7 +84,6 @@ function addPowers(player) {
 function addRamsesPowers(player) {
     let modTotal = 1
     for (let i = 0; i < ramses.items.length; i++) {
-        debugger
         const total = ramses.items[i].mod;
         modTotal = modTotal * total
     }
