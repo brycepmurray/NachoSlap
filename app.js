@@ -72,14 +72,14 @@ function fancyOils(ramses) {
     ramses.items.push(items.fancyOils)
 }
 
-function addPowers(nacho) {
-    var nachoTotal = 0
+function addPowers(player) {
+    var modTotal = 1
     for (let i = 0; i < nacho.items.length; i++) {
         debugger
-        const item = nacho.items[i].mod;
-        nachoTotal = item * nachoTotal
+        var total = nacho.items[i].mod;
+        modTotal = modTotal * total
     }
-    return nachoTotal
+    return modTotal
 }
 
 // function ramsesChoices(min, max) {
