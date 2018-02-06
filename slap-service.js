@@ -68,5 +68,4 @@ function SlapService() {
         return players.health
     }
 
-
 }
